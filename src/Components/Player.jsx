@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-export default function Player({ name, symbol }) {
+export default function Player({ name, symbol, isActive }) {
   // editing mode to re-render the page based on the situation
   const [editing, editingChanger] = useState(false);
   const [playerName, playerNameChnager] = useState(name);
@@ -21,7 +21,7 @@ export default function Player({ name, symbol }) {
   }
 
   return (
-    <li>
+    <li className={isActive ? "active" : undefined}>
       <span className="player">
         {nameTag}
         <span className="player-symbol">{symbol}</span>
