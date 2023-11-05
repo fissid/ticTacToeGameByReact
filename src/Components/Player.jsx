@@ -10,7 +10,7 @@ export default function Player({ name, symbol }) {
   };
   //   if situation is in editing mode change the nameTag to an input
   if (editing) {
-    nameTag = <input type="text" />;
+    nameTag = <input type="text" required />;
   }
   return (
     <li>
