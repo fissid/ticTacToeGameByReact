@@ -5,13 +5,19 @@ export default function Player({ name, symbol }) {
   //   default nameTag is just for showing the name
   let nameTag = <span className="player-name">{name}</span>;
 
+  //   state is changing w.r.t prev state so must pass a function
   const editHandler = () => {
-    editingChanger(true);
+    editingChanger((prevState) => {
+      return !prevState;
+    });
   };
+  const nameInputHandler = () => {};
+
   //   if situation is in editing mode change the nameTag to an input
   if (editing) {
-    nameTag = <input type="text" required />;
+    nameTag = <input type="text" required value={name} onChange={nameInputHandler} />;
   }
+
   return (
     <li>
       <span className="player">
