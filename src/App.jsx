@@ -7,6 +7,7 @@ function App() {
   const [activePlayer, setActivePlayer] = useState("X");
   function selectSquareHandler() {
     setActivePlayer((prevState) => (prevState === "X" ? "O" : "X"));
+    setGameTurns();
   }
   return (
     <main>
